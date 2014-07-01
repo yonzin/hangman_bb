@@ -1,0 +1,3 @@
+add directive (on body?) that makes sure the size of the app
+is correct, based on the window (viewport).
+
