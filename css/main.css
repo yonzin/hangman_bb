@@ -62,9 +62,6 @@ h1.title {
 
 }
 
-.letter:hover {
-}
-
 .letter:active {
   color: rgb(235,235, 235);
   -webkit-transform: scale3d(1.1,1.1,1);
@@ -74,6 +71,8 @@ h1.title {
 
 .word {
   -webkit-transition: all 1s;
-  letter-spacing: 1em;
-  font-size: 1.5em;
+  letter-spacing: 0.5em;
+  font-size: 1.8em;
+  word-break: break-word;
+  font-family: monospace;
 }

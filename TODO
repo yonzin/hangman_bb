@@ -5,7 +5,6 @@ revelead word
 
 directive for keyboard, hangman
 
-
 print revealed word
 
 signals
@@ -14,3 +13,4 @@ popup
 
 menu button
 
+sounds

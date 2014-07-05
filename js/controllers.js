@@ -14,9 +14,4 @@ app.controller('gameCtrl', function($scope, gameService) {
   $scope.$on("revealedUpdated", function(event, args) {
     $scope.revealedWord = args.revealedWord;
   });
-
-  $scope.click = function(e) {
-   gameService.check(gameService.word[gameService.lettersFound.length]); 
-
-  };
 });
