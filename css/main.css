@@ -38,3 +38,42 @@ h1.title {
 .img-container img {
   width:100%;
 }
+
+.keyboard {
+  width: 100%;
+}
+
+.letter {
+  width: 14%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 2em;
+  box-sizing: border-box;
+  background: rgba(245, 245, 245, 1);
+  -webkit-transition: all 0.2s;
+  color: #333;
+  position: relative;
+  z-index: 0;
+  -webkit-appearance: none;
+  appearance: none;
+
+}
+
+.letter:hover {
+}
+
+.letter:active {
+  color: rgb(235,235, 235);
+  -webkit-transform: scale3d(1.1,1.1,1);
+  z-index: 1;
+  background: rgba(35, 35, 35, 1);
+}
+
+.word {
+  -webkit-transition: all 1s;
+  letter-spacing: 1em;
+  font-size: 1.5em;
+}

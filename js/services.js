@@ -10,6 +10,9 @@ app.service("wordsService", function($http) {
         word = _words.words[index];
       }
       return word;
+    },
+    ready: function() {
+      return words !== null;
     }
   };
   $http.get("words.json").success( function(data) {
@@ -19,4 +22,79 @@ app.service("wordsService", function($http) {
   });
 
   return _words;
+});
+
+app.service("gameService", function($rootScope,wordsService) {
+  var _game = {
+    state: 0, //0 not-in-game, 1 playing, 2 finished
+    word: '',
+    revealedWord: '',
+    lettersFound: [],
+    lettersMissed: [],
+    // see if letter is in word
+    // trigger game end, if word
+    // is found or 7 mistakes are made
+    //
+    // returns, -1 on new error, 1 on new hit, 0 otherwise
+    check: function(letter) {
+      var word=_game.word.toLowerCase(),
+        _letter=letter.toLowerCase();
+
+      //new mistake
+      if(word.indexOf(_letter) === -1 &&
+        _game.lettersMissed.indexOf(_letter) === -1) {
+        _game.lettersMissed.push(_letter);
+
+        if(_game.lettersMissed.length >=7){
+          //end game signal
+        }
+        return -1;
+      }
+      //new correct
+      else if(word.indexOf(_letter) >=0 &&
+        _game.lettersFound.indexOf(_letter) === -1) {
+        _game.revealLetter(_letter);
+        _game.lettersFound.push(_letter);
+        $rootScope.$broadcast("revealedUpdated", {
+          revealedWord: _game.revealedWord
+        });
+        return 1;
+      }
+      return 0;
+    },
+    revealLetter: function(letter) {
+      var word = _game.word,
+        lc_word = word.toLowerCase(),
+        revealedWord = _game.revealedWord,
+        newRevealed = "";
+      
+      for(var i=0;i<word.length;i++) {
+        if(lc_word[i] === letter) {
+          newRevealed += word[i];
+        }
+        else {
+          newRevealed += revealedWord[i];
+        }
+      }
+      _game.revealedWord = newRevealed;
+    },
+    start: function() {
+      _game.clear();
+      _game.word = wordsService.getWord();
+      for(var i=0;i<_game.word.length;i++) {
+        _game.revealedWord+="_";
+      }
+    },
+    clear: function() {
+      _game.state = 0;
+      _game.revealedWord = '';
+      _game.lettersFound = [];
+      _game.lettersMissed = [];
+    }
+
+  };
+
+
+  return _game;
+
 });

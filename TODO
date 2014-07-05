@@ -1,3 +1,16 @@
 add directive (on body?) that makes sure the size of the app
-is correct, based on the window (viewport).
+is correct, based on the window (viewport) (or responsive styles)
+
+revelead word
+
+directive for keyboard, hangman
+
+
+print revealed word
+
+signals
+
+popup
+
+menu button
 
