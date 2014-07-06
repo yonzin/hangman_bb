@@ -13,3 +13,11 @@ app.config( function($routeProvider) {
   });
 
 });
+
+app.run( 
+  function() {
+    window.addEventListener('load', function() {
+      FastClick.attach(document.body);
+    }, false);
+  }
+);

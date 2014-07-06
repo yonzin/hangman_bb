@@ -11,7 +11,15 @@ app.controller('gameCtrl', function($scope, gameService) {
   gameService.start();
   $scope.word = gameService.word;
   $scope.revealedWord= gameService.revealedWord;
-  $scope.$on("revealedUpdated", function(event, args) {
+  $scope.$on("letterHit", function(event, args) {
     $scope.revealedWord = args.revealedWord;
   });
+  $scope.$on("endGame", function(event, args) {
+    console.log(args);
+    gameService.clear();
+  });
+  $scope.letters = {
+    hits: gameService.lettersFound,
+    misses: gameService.lettersMissed
+  };
 });

@@ -76,3 +76,63 @@ h1.title {
   word-break: break-word;
   font-family: monospace;
 }
+
+.success-a .letter.letter-a,
+.success-b .letter.letter-b,
+.success-c .letter.letter-c,
+.success-d .letter.letter-d,
+.success-e .letter.letter-e,
+.success-f .letter.letter-f,
+.success-g .letter.letter-g,
+.success-h .letter.letter-h,
+.success-i .letter.letter-i,
+.success-j .letter.letter-j,
+.success-k .letter.letter-k,
+.success-l .letter.letter-l,
+.success-m .letter.letter-m,
+.success-n .letter.letter-n,
+.success-o .letter.letter-o,
+.success-p .letter.letter-p,
+.success-q .letter.letter-q,
+.success-r .letter.letter-r,
+.success-s .letter.letter-s,
+.success-t .letter.letter-t,
+.success-u .letter.letter-u,
+.success-v .letter.letter-v,
+.success-w .letter.letter-w,
+.success-x .letter.letter-x,
+.success-y .letter.letter-y,
+.success-z .letter.letter-z {
+  color: #eee;
+  background-color: #008000;
+}
+
+.fail-a .letter.letter-a,
+.fail-b .letter.letter-b,
+.fail-c .letter.letter-c,
+.fail-d .letter.letter-d,
+.fail-e .letter.letter-e,
+.fail-f .letter.letter-f,
+.fail-g .letter.letter-g,
+.fail-h .letter.letter-h,
+.fail-i .letter.letter-i,
+.fail-j .letter.letter-j,
+.fail-k .letter.letter-k,
+.fail-l .letter.letter-l,
+.fail-m .letter.letter-m,
+.fail-n .letter.letter-n,
+.fail-o .letter.letter-o,
+.fail-p .letter.letter-p,
+.fail-q .letter.letter-q,
+.fail-r .letter.letter-r,
+.fail-s .letter.letter-s,
+.fail-t .letter.letter-t,
+.fail-u .letter.letter-u,
+.fail-v .letter.letter-v,
+.fail-w .letter.letter-w,
+.fail-x .letter.letter-x,
+.fail-y .letter.letter-y,
+.fail-z .letter.letter-z {
+  color: #eee;
+  background-color:#C00000;
+}

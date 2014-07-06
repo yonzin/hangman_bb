@@ -37,6 +37,10 @@ app.service("gameService", function($rootScope,wordsService) {
     //
     // returns, -1 on new error, 1 on new hit, 0 otherwise
     check: function(letter) {
+      if(_game.state !== 1) {
+        return;
+      }
+
       var word=_game.word.toLowerCase(),
         _letter=letter.toLowerCase();
 
@@ -46,7 +50,11 @@ app.service("gameService", function($rootScope,wordsService) {
         _game.lettersMissed.push(_letter);
 
         if(_game.lettersMissed.length >=7){
-          //end game signal
+          _game.state = 2;
+          $rootScope.$broadcast("endGame", {
+            word: _game.word,
+            won: false
+          });
         }
         return -1;
       }
@@ -55,9 +63,16 @@ app.service("gameService", function($rootScope,wordsService) {
         _game.lettersFound.indexOf(_letter) === -1) {
         _game.revealLetter(_letter);
         _game.lettersFound.push(_letter);
-        $rootScope.$broadcast("revealedUpdated", {
+        $rootScope.$broadcast("letterHit", {
           revealedWord: _game.revealedWord
         });
+        if(_game.revealedWord === _game.word) {
+          _game.state = 2;
+          $rootScope.$broadcast("endGame", {
+            word: _game.word,
+            won: true
+          });
+        }
         return 1;
       }
       return 0;
@@ -80,6 +95,7 @@ app.service("gameService", function($rootScope,wordsService) {
     },
     start: function() {
       _game.clear();
+      _game.state = 1;
       _game.word = wordsService.getWord();
       for(var i=0;i<_game.word.length;i++) {
         _game.revealedWord+="_";
