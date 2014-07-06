@@ -15,7 +15,8 @@ app.config( function($routeProvider) {
 });
 
 app.run( 
-  function() {
+  function($location) {
+    $location.path('/');
     window.addEventListener('load', function() {
       FastClick.attach(document.body);
     }, false);

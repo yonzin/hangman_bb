@@ -1,16 +1,9 @@
-add directive (on body?) that makes sure the size of the app
-is correct, based on the window (viewport) (or responsive styles)
-
-revelead word
-
-directive for keyboard, hangman
-
-print revealed word
-
-signals
+directive for hangman
 
 popup
 
 menu button
+
+sizing
 
 sounds
