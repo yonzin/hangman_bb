@@ -14,7 +14,7 @@ app.config( function($routeProvider) {
 
 });
 
-app.run( 
+app.run(
   function($location) {
     $location.path('/');
     window.addEventListener('load', function() {

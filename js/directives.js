@@ -48,9 +48,25 @@ app.directive("keyboard", function(gameService) {
       for(var i=0; i<alphabet.length; i++) {
         keys+="<a class='letter letter-"+
           alphabet[i]+"' data-letter='"+
-          alphabet[i]+"'>"+alphabet[i]+"</a>";
+          alphabet[i]+"' draggable='false'>"+alphabet[i]+"</a>";
       }
       return keys;
     }
+  };
+});
+
+app.directive("container", function($window) {
+  return {
+    link: function(scope, element, attrs) {
+      var _timeout = 0;
+      angular.element($window).on("resize", function(res) {
+        clearTimeout(_timeout);
+        _timeout = setTimeout( function() {
+          element.css("height",$window.innerHeight+"px");
+        }, 2500);
+      });
+      element.css("height",$window.innerHeight+"px");
+    },
+    restrict: 'C'
   };
 });
