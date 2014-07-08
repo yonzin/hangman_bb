@@ -13,6 +13,10 @@ div.container {
   linear-gradient(#eee .1em, transparent .1em);
   background-size: 100% 1.2em;
   text-align: center;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
 }
 
 a.start-button {
@@ -71,13 +75,17 @@ img.game-image {
 
 .keyboard {
   width: 100%;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+
 }
 
 .letter {
   position: relative;
   z-index: 0;
   display: inline-block;
-  box-sizing: border-box;
   box-sizing: border-box;
   padding-top: 4px;
   padding-bottom: 4px;
