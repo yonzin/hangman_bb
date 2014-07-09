@@ -15,7 +15,7 @@ app.service("wordsService", function($http) {
       return words !== null;
     }
   };
-  $http.get("words.json").success( function(data) {
+  $http.get("mwords.json").success( function(data) {
     //send broadcast so the main controller
     //can close the loading dialog
     _words.words = data;
