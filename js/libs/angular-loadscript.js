@@ -29,14 +29,29 @@
  
   var app = ng.module('ngLoadScript', []);
 
-  app.directive('adv', function() {
+  app.directive('script', function() {
     return {
-      restrict: 'A',
+      restrict: 'E',
       scope: false,
       link: function(scope, elem, attr) 
       {
-        var adv = $('#leadbolt_adv').children().detach();
-        console.log(adv);
+        if (attr.type==='text/javascript-lazy') 
+        {
+          var s = document.createElement("script");
+          s.type = "text/javascript";                
+          var src = elem.attr('src');
+          if(src!==undefined)
+          {
+              s.src = src;
+          }
+          else
+          {
+              var code = elem.text();
+              s.text = code;
+          }
+          document.head.appendChild(s);
+          elem.remove();
+        }
       }
     };
   });
