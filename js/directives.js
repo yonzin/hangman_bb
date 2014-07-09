@@ -71,3 +71,12 @@ app.directive("container", function($window) {
   };
 });
 
+app.directive("adscript", function() {
+  return {
+    link: function(scope, element, attrs) {
+      var iframe = $('#scripttag iframe').detach();
+      element.append(iframe);
+    },
+    restrict: 'A'
+  };
+});
