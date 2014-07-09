@@ -4,6 +4,10 @@ body {
   padding: 0;
 }
 
+#leadbolt_ad {
+  display:none;
+}
+
 div.container {
   box-sizing: border-box;
   padding: 0 8px;
