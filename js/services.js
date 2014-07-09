@@ -56,7 +56,7 @@ app.service("gameService", function($rootScope,wordsService) {
           _game.state = 2;
           $rootScope.$broadcast("endGame", {
             word: _game.word,
-            won: false
+            won: 'lost'
           });
         }
         return -1;
@@ -73,7 +73,7 @@ app.service("gameService", function($rootScope,wordsService) {
           _game.state = 2;
           $rootScope.$broadcast("endGame", {
             word: _game.word,
-            won: true
+            won: 'won'
           });
         }
         return 1;

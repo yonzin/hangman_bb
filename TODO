@@ -1,13 +1,4 @@
-popup: directive with ng-show
-    sizing
-    top right: round X button to close
-    bottom: wide "new word" button
-    top: wide revealed word, bg red/green/white
-    menu button opens it
-    ads
-    end game auto open
-
-Anims (fades)
+ads
 package (splash)
 publish
 

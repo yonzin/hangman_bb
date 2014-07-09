@@ -1,4 +1,4 @@
-var app = angular.module('hangmanApp', ['ngRoute']);
+var app = angular.module('hangmanApp', ['ngRoute','ngAnimate']);
 
 app.config( function($routeProvider) {
 

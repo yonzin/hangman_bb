@@ -4,7 +4,25 @@
 
   <div keyboard hits="{{letters.hits}}"
     misses="{{letters.misses}}"></div>
-  <a ng-click="newGame()" class="menu-button"></a>
+  <a ng-click="openPopup()" class="menu-button"></a>
   <!--<a href="#">Back</a>-->
+  <div class="popup-container animate-show" ng-hide="!popup">
+    <div class="popup">
+      <div class="popup-header"
+        ng-class="{'won':end=='won','lost':end=='lost'}">
+        <h3 class="word">{{revealedWord}} </h3>
+      </div>
+      <div class="popup-content">
+
+
+      </div>
+      <div class="popup-footer">
+        <a class="popup-new-game-button"
+          ng-click="newGame()">New Game</a>
+      </div>
+      <a class="popup-close-button"
+        ng-click="closePopup()">&times;</a>
+    </div>
+  </div>
 
 </div>
