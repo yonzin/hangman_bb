@@ -71,11 +71,17 @@ app.directive("container", function($window) {
   };
 });
 
-app.directive("adscript", function() {
+app.directive("adscript", function($window) {
   return {
     link: function(scope, element, attrs) {
-      var iframe = $('#scripttag iframe').detach();
-      element.append(iframe);
+      var iframe_a = $('#scripttag_a iframe').detach();
+      var iframe_b = $('#scripttag_b iframe').detach();
+      element.append(iframe_a);
+      element.append(iframe_b);
+      iframe_a.css("position","relative");
+      iframe_a.css("top","10px");
+      iframe_b.css("position","relative");
+      iframe_b.css("top","20px");
     },
     restrict: 'A'
   };
