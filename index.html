@@ -21,12 +21,27 @@
     (function() {
       var script =
         '<div id="scripttag_a" style="position:relative;top:54px;display:none"><'+'script type="text/javascript" src="http://ad.leadboltmobile.net/show_app_ad.js?section_id=SCRIPT_ID"><'+'/'+'script></div>';
-      var ids = [ "422471197", "835078031"];
-      if(window.innerHeight < 320) {
+      var ids = [ 
+        "422471197",
+        "835078031",
+        "494589432",
+        "298787607",
+        "434866947"
+      ];
+      if(window.innerHeight < 360) {
         script=script.replace('SCRIPT_ID',ids[0]);
       }
-      else {
+      else if (window.innerHeight < 640) {
         script=script.replace('SCRIPT_ID',ids[1]);
+      }
+      else if (window.innerHeight < 768) {
+        script=script.replace('SCRIPT_ID',ids[2]);
+      }
+      else if (window.innerHeight < 960) {
+        script=script.replace('SCRIPT_ID',ids[3]);
+      }
+      else {
+        script=script.replace('SCRIPT_ID',ids[4]);
       }
       document.write(script);
     })();
