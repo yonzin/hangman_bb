@@ -17,11 +17,18 @@
   <script src="js/services.js"></script>
 </head>
 <body>
-  <div id="scripttag_a" style="position:relative;top:54px;display:none">
-    <script type="text/javascript" src="http://ad.leadboltmobile.net/show_app_ad.js?section_id=835078031"></script>
-  </div>
-  <div id="scripttag_b" style="position:relative;top:54px;display:none"><script type="text/javascript" src="http://ad.leadboltmobile.net/show_app_ad.js?section_id=422471197"></script>
-  </div>
+  <script>
+    var script =
+      '<div id="scripttag_a" style="position:relative;top:54px;display:none"><'+'script type="text/javascript" src="http://ad.leadboltmobile.net/show_app_ad.js?section_id=SCRIPT_ID"><'+'/'+'script></div>';
+    var ids = [ "422471197", "835078031"];
+    if(window.innerHeight < 320) {
+      script=script.replace('SCRIPT_ID',ids[0]);
+    }
+    else {
+      script=script.replace('SCRIPT_ID',ids[1]);
+    }
+    document.write(script);
+  </script>
   <div ng-view></div>
 </body>
 </html>
