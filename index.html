@@ -38,11 +38,8 @@
       else if (window.innerHeight < 768) {
         script=script.replace('SCRIPT_ID',ids[2]);
       }
-      else if (window.innerHeight < 960) {
-        script=script.replace('SCRIPT_ID',ids[3]);
-      }
       else {
-        script=script.replace('SCRIPT_ID',ids[4]);
+        script=script.replace('SCRIPT_ID',ids[3]);
       }
       document.write(script);
     })();
