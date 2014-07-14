@@ -4,8 +4,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.beefybyte.hangman_bb"
-        version   = "1.0.1"
-        android-versionCode = "2">
+        version   = "1.0.2"
+        android-versionCode = "3">
 
     <name>Hangman-bb</name>
 
