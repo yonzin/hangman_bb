@@ -1,6 +1,10 @@
 hangman_bb
 ==========
 
+A difficult hangman game, made with AngularJS
+
+
+
 The MIT License (MIT)
 
 Copyright (C) 2014 John Varouhakis
