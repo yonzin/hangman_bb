@@ -1,5 +1,6 @@
 hangman_bb
 ==========
+
 A difficult hangman game, made with AngularJS
 
 
