@@ -74,10 +74,6 @@ app.directive("container", function($window) {
 app.directive("adscript", function($window) {
   return {
     link: function(scope, element, attrs) {
-      var iframe_a = $('#scripttag_a iframe').detach();
-      element.append(iframe_a);
-      iframe_a.css("position","relative");
-      iframe_a.css("top","10px");
     },
     restrict: 'A'
   };
