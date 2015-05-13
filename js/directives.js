@@ -71,10 +71,3 @@ app.directive("container", function($window) {
   };
 });
 
-app.directive("adscript", function($window) {
-  return {
-    link: function(scope, element, attrs) {
-    },
-    restrict: 'A'
-  };
-});
